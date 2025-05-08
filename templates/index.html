@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo de viagem</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Duração da viagem</h1>
+        <form action="/calcular_tempo" method="post">
+            <label for="Distancia">Distancia em Km (ex:20)</label>
+            <input type="number" id="distancia" name="distancia"  required>
+
+            <label for="Velocidade">Velocidade atual</label>
+            <input type="number" id="velocidade" name="velocidade"  required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        {% if tempo %}
+        <div class="resultado">
+            <h2>Horas de duração da viagem</h2>
+            <p><strong>Horas:</strong> {{ tempo }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
